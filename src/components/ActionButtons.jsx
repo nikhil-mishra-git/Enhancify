@@ -1,15 +1,18 @@
-const ActionButtons = () => (
-  <div className="flex justify-center gap-4 mt-6">
-    <button className="px-5 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition">
-      Enhance Quality
+import React from 'react';
+import { FiUpload } from 'react-icons/fi';
+
+const ActionButtons = ({ onClick }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="inline-flex cursor-pointer items-center gap-2 px-6 py-4 rounded-full text-white font-medium text-sm md:text-lg transition-all duration-300
+      bg-gradient-to-r from-[#825cf5] to-[#c995fe] hover:opacity-90 shadow-md
+      backdrop-blur-md border border-white/10"
+    >
+      <FiUpload className="text-base" />
+      Upload Image
     </button>
-    <button className="px-5 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition">
-      Restore Face
-    </button>
-    <button className="px-5 py-2 bg-gray-700 text-white rounded-lg font-medium hover:bg-gray-800 transition">
-      Remove Background
-    </button>
-  </div>
-);
+  );
+};
 
 export default ActionButtons;

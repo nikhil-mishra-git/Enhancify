@@ -4,6 +4,11 @@ import Container from './container/container';
 import Logo from './Logo'
 import Upload from './Upload'
 import HeroSection from './HeroSection'
+import ActionButtons from './ActionButtons'
+import RotableBadge from './RotableBadge'
+import BeforeAfterSlider from './BeforeAfterSlider'
+import HorizontalScroller from './HorizontalScroller'
+import FAQSection from './FAQSection'
 
 export {
     Container,
@@ -11,5 +16,10 @@ export {
     Footer,
     Logo,
     Upload,
-    HeroSection
+    ActionButtons,
+    HeroSection,
+    RotableBadge,
+    BeforeAfterSlider,
+    HorizontalScroller,
+    FAQSection
 }

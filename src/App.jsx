@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './components/Header'
-import HeroSection from './components/HeroSection'
-import Footer from './components/Footer'
+import { Footer, Header, HeroSection, BeforeAfterSlider, FAQSection } from './components'
+import Features from './components/Features'
+import OtherKits from './components/OtherKits'
 
 
 const App = () => {
@@ -9,6 +9,10 @@ const App = () => {
     <div className='className="min-h-screen bg-[#0e0c15]'>
       <Header />
       <HeroSection/>
+      <BeforeAfterSlider/>
+      <OtherKits/>
+      <Features/>
+      <FAQSection/>
       <Footer/>
     </div>
   )
