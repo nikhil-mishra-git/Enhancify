@@ -22,32 +22,35 @@ const FAQSection = () => {
 
   return (
     <Container>
-      <section className="py-8 text-white">
-        <h2 className="text-4xl font-bold text-center mb-12 tracking-tight">
-          Help & FAQ
-        </h2>
+      <section className="py-20 text-white">
+        <div className="text-center md:text-left space-y-6 mb-12">
+          <h2 className="text-[7vw] md:text-5xl tracking-tight leading-snug">
+            Got Questions? <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-500">
+              We've Got Answers
+            </span>
+          </h2>
+        </div>
 
         <div className="space-y-5">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
-
             return (
               <div
                 key={index}
-                className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 transition-all duration-300  shadow-md"
+                className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 transition-all duration-300 shadow-md"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex justify-between items-center text-left"
                 >
-                  <span className="text-lg font-medium text-white">
+                  <span className="text-base md:text-lg font-medium">
                     {faq.question}
                   </span>
-                  <span className="text-purple-300 cursor-pointer">
+                  <span className="text-purple-300">
                     {isOpen ? <FaMinus size={16} /> : <FaPlus size={16} />}
                   </span>
                 </button>
-
                 <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
                     isOpen ? 'max-h-40 mt-3 opacity-100' : 'max-h-0 opacity-0'

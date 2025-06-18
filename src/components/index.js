@@ -2,24 +2,32 @@ import Header from './Header'
 import Footer from './Footer'
 import Container from './container/container';
 import Logo from './Logo'
-import Upload from './Upload'
+import ImageUploadBox from './ImageUploadBox'
 import HeroSection from './HeroSection'
 import ActionButtons from './ActionButtons'
-import RotableBadge from './RotableBadge'
 import BeforeAfterSlider from './BeforeAfterSlider'
-import HorizontalScroller from './HorizontalScroller'
 import FAQSection from './FAQSection'
+import EnhanceHeroSection from './EnhanceHeroSection'
+import OtherKits from './OtherKits'
+import Features from './Features'
+import LoaderComponent from './LoaderComponent'
+import NotFound from './NotFound'
+import BeforeAfterSkeleton from './BeforeAfterSkeleton'
 
 export {
     Container,
     Header,
     Footer,
     Logo,
-    Upload,
+    ImageUploadBox,
     ActionButtons,
     HeroSection,
-    RotableBadge,
     BeforeAfterSlider,
-    HorizontalScroller,
-    FAQSection
+    FAQSection,
+    EnhanceHeroSection,
+    OtherKits,
+    Features,
+    LoaderComponent,
+    NotFound,
+    BeforeAfterSkeleton
 }
