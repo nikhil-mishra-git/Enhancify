@@ -7,7 +7,6 @@ import HeroSection from './HeroSection'
 import ActionButtons from './ActionButtons'
 import BeforeAfterSlider from './BeforeAfterSlider'
 import FAQSection from './FAQSection'
-import EnhanceHeroSection from './EnhanceHeroSection'
 import OtherKits from './OtherKits'
 import Features from './Features'
 import LoaderComponent from './LoaderComponent'
@@ -24,7 +23,6 @@ export {
     HeroSection,
     BeforeAfterSlider,
     FAQSection,
-    EnhanceHeroSection,
     OtherKits,
     Features,
     LoaderComponent,

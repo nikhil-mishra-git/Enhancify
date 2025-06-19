@@ -6,7 +6,7 @@ import { Logo, Container } from '../components';
 const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Enhance', path: '/enhance' },
-    { name: 'BG Remover', path: '/bgremover' },
+    { name: 'BG Remover', path: '/bgremove' },
 ];
 
 const Header = () => {

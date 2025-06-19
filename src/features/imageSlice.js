@@ -4,8 +4,7 @@ const initialState = {
     image: null,
     result: null,
     loading: false,
-    error: null,
-    mode: 'enhance'
+    error: null
 }
 
 const imageSlice = createSlice({
@@ -26,9 +25,6 @@ const imageSlice = createSlice({
         setError: (state, action) => {
             state.error = action.payload;
         },
-        setMode: (state, action) => {
-            state.mode = action.payload;
-        },
         resetState: () => initialState
     },
 })
@@ -38,7 +34,6 @@ export const {
     setResult,
     setLoading,
     setError,
-    setMode,
     resetState,
 } = imageSlice.actions;
 export default imageSlice.reducer;

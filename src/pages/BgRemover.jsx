@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaMagic, FaDownload, FaRedo } from 'react-icons/fa'
-import { enhanceImage } from '../api/imageProcessAPI'
+import { removeBg } from '../api/imageProcessAPI'
 import { downloadImageFromURL } from '../config/downloadFile'
 import {
   BeforeAfterSlider,
@@ -18,7 +18,7 @@ import {
   resetState
 } from '../features/imageSlice'
 
-const Enhance = () => {
+const BgRemover = () => {
   const dispatch = useDispatch()
   const { image, result, loading } = useSelector((state) => state.image)
 
@@ -29,7 +29,7 @@ const Enhance = () => {
       dispatch(setImage(URL.createObjectURL(file)))
       dispatch(setLoading(true))
 
-      const resultUrl = await enhanceImage(file)
+      const resultUrl = await removeBg(file)
       dispatch(setResult(resultUrl))
     } catch (error) {
       dispatch(setError(error.message))
@@ -43,20 +43,20 @@ const Enhance = () => {
   }
 
   const handleDownload = async () => {
-    downloadImageFromURL(result, 'enhance-image.png')
+    downloadImageFromURL(result, 'transparent-image.png')
   }
-
 
   const showSlider = !loading && image && result
 
   return (
     <>
       <HeroSection
-        title="Enhance"
-        highlight="Photos Quality"
-        subtitle="Online With AI"
-        desc="Elevate your images easily with Enhancify powerful AI Photo Enhancer feature"
+        title="Instant"
+        highlight="Background Removal"
+        subtitle="Powered by AI"
+        desc="Quickly make images transparent. Ideal for products, profiles, and more."
       />
+
       {!showSlider && <ImageUploadBox onImageSelect={handleFileChange} />}
 
       {loading ? (
@@ -72,7 +72,7 @@ const Enhance = () => {
               className="flex items-center justify-center cursor-pointer gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full shadow-md bg-gradient-to-r from-[#825cf5] to-[#c995fe] hover:opacity-90 text-white font-medium text-xs md:text-lg transition-all duration-200"
             >
               <FaDownload className="text-sm md:text-lg" />
-              Download Image
+              Download Transparent Image
             </button>
 
             <button
@@ -80,7 +80,7 @@ const Enhance = () => {
               className="flex items-center justify-center cursor-pointer gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full border border-white/20 backdrop-blur-sm bg-white/10 hover:bg-white/20 text-white font-medium text-xs md:text-lg transition-all duration-200"
             >
               <FaRedo className="text-sm md:text-base" />
-              Enhance Another Image
+              Remove Background From Another
             </button>
           </div>
 
@@ -90,11 +90,12 @@ const Enhance = () => {
         <div className="flex flex-col items-center justify-center mt-12 text-center space-y-2">
           <FaMagic className="text-purple-400 text-3xl animate-pulse" />
           <p className="text-lg md:text-xl font-semibold text-gray-200">
-            Upload an image to begin enhancement
+            Upload an image to remove its background
           </p>
-          <p className="text-[3vw] md:text-sm text-gray-500 max-w-md">
-            Enhancify will automatically process your image and show a beautiful transformation preview below.
+          <p className="text-[3vw] md:text-sm text-gray-400 max-w-md">
+            Our AI automatically removes the background from your image. Download it as a clean PNG.
           </p>
+
         </div>
       )}
 
@@ -103,4 +104,4 @@ const Enhance = () => {
   )
 }
 
-export default Enhance
+export default BgRemover

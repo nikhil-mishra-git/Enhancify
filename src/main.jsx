@@ -7,6 +7,7 @@ import { store } from './app/store.js'
 import { BrowserRouter, createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Enhance from './pages/Enhance.jsx'
+import BgRemover from './pages/BgRemover.jsx'
 import { NotFound } from './components'
 
 const router = createBrowserRouter(
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<App />}>
       <Route index element={<Home />} />
       <Route path='/enhance' element={<Enhance />} />
+      <Route path="/bgremove" element={<BgRemover/>}/>
       <Route path="*" element={<NotFound />} />
     </Route>
   )
