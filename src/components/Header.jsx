@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <Container>
             <nav className="w-full z-50 top-0 left-0 flex justify-center">
-                <div className="w-full mt-10 flex items-center justify-between backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-6 py-4 gap-12 text-white shadow-md">
+                <div className="w-full mt-5 md:mt-10 flex items-center justify-between backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-6 py-4 gap-12 text-white shadow-md">
 
                     <div className="pl-2">
                         <Logo />

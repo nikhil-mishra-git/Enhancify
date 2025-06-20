@@ -52,8 +52,8 @@ const BgRemover = () => {
     <>
       <HeroSection
         title="Instant"
-        highlight="Background Removal"
-        subtitle="Powered by AI"
+        highlight="BG Remover"
+        subtitle="AI-Powered"
         desc="Quickly make images transparent. Ideal for products, profiles, and more."
       />
 
