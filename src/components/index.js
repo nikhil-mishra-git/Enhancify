@@ -1,6 +1,6 @@
 import Header from './Header'
 import Footer from './Footer'
-import Container from './container/container';
+import Container from './container/Container';
 import Logo from './Logo'
 import ImageUploadBox from './ImageUploadBox'
 import HeroSection from './HeroSection'
