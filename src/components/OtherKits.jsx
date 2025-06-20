@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import enhancerKit1 from '../assets/Images/OtherImage1.png';
 import enhancerKit2 from '../assets/Images/OtherImage2.png';
-import Container from './container/container';
+import {Container} from '../components'
 
 const OtherKits = () => {
     return (
