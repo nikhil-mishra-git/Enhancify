@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiHome, FiImage, FiLayers } from 'react-icons/fi';
 import { Logo, Container } from '../components';
 
 const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Enhance', path: '/enhance' },
-    { name: 'BG Remover', path: '/bgremove' },
+    { name: 'Home', path: '/', icon: <FiHome /> },
+    { name: 'Enhance', path: '/enhance', icon: <FiLayers /> },
+    { name: 'BG Remover', path: '/bgremove', icon: <FiImage /> },
 ];
 
 const Header = () => {
@@ -38,35 +38,40 @@ const Header = () => {
                         ))}
                     </div>
 
-                    {/* Hamburger Icon */}
                     <div className="md:hidden pr-2 z-50">
-                        <button onClick={() => setIsOpen(true)} aria-label="Open menu">
+                        <button
+                            onClick={() => setIsOpen(true)}
+                            aria-label="Open menu"
+                            className="text-white focus:outline-none"
+                        >
                             <FiMenu size={28} />
                         </button>
                     </div>
                 </div>
 
-                {/* Mobile Slide-In Drawer */}
-                <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs z-40 backdrop-blur-md bg-white/5 border border-white/10 shadow-lg transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-                    {/* Close Icon */}
-                    <div className="flex justify-end p-4">
+                <div className={`fixed top-0 right-0 h-full w-4/5 max-w-xs z-40 backdrop-blur-md bg-white/10 border-l border-white/10 shadow-xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+
+                    <div className="flex justify-end p-8">
                         <button onClick={() => setIsOpen(false)} aria-label="Close menu">
-                            <FiX size={26} className="text-white mt-10 mr-6" />
+                            <FiX size={26} className="text-white" />
                         </button>
                     </div>
 
-                    {/* Mobile Nav Links */}
-                    <div className="flex flex-col space-y-6 p-8 text-white font-medium">
-                        {navItems.map(({ name, path }) => (
+                    <div className="flex flex-col space-y-6 p-10 text-white font-medium">
+                        {navItems.map(({ name, path, icon }) => (
                             <NavLink
                                 key={name}
                                 to={path}
                                 onClick={() => setIsOpen(false)}
                                 className={({ isActive }) =>
-                                    `px-4 py-2 rounded-full transition duration-200 ${isActive ? 'bg-purple-500 text-white' : 'hover:bg-white/10 text-gray-200'
+                                    `flex items-center gap-3 px-4 py-2 rounded-xl transition duration-200 text-lg ${isActive
+                                        ? 'bg-gradient-to-r from-[#7d5fff] to-[#a97fff] text-white'
+                                        : 'hover:bg-white/10 text-gray-200'
                                     }`
                                 }
+
                             >
+                                <span className="block md:hidden">{icon}</span>
                                 {name}
                             </NavLink>
                         ))}
@@ -75,7 +80,7 @@ const Header = () => {
 
                 {isOpen && (
                     <div
-                        className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30"
+                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-30"
                         onClick={() => setIsOpen(false)}
                     />
                 )}

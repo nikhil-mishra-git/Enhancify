@@ -22,11 +22,11 @@ const FAQSection = () => {
 
   return (
     <Container>
-      <section className="py-20 text-white">
+      <section className="pt-20 text-white">
         <div className="text-center md:text-left space-y-6 mb-12">
           <h2 className="text-[7vw] md:text-5xl tracking-tight leading-snug">
             Got Questions? <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7d5fff] to-[#a97fff]">
               We've Got Answers
             </span>
           </h2>
@@ -42,7 +42,7 @@ const FAQSection = () => {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex justify-between items-center text-left"
+                  className="w-full flex justify-between items-center text-left cursor-pointer"
                 >
                   <span className="text-base md:text-lg font-medium">
                     {faq.question}

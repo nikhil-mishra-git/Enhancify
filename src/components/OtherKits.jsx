@@ -11,19 +11,17 @@ const OtherKits = () => {
             <section className="py-10 md:py-20 px-4 md:px-6 text-white mt-20">
                 <div className=" mx-auto space-y-20">
 
-                    {/* Section Title */}
                     <div className="text-center md:text-left space-y-5">
                         <h2 className="text-[7vw] md:text-5xl leading-tight tracking-tight">
                             The All-in-one AI <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-purple-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7d5fff] to-[#a97fff]">
                                 Photo Enhancer Kits
                             </span>
                         </h2>
                     </div>
 
-                    {/* Portrait Enhancer */}
                     <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20">
-                        {/* Text Content */}
+
                         <div className="w-full max-w-xl text-left space-y-6">
                             <h3 className="text-2xl md:text-4xl font-semibold">Enhance Portraits & Selfies</h3>
                             <p className="text-base md:text-lg text-gray-300 leading-relaxed">
@@ -32,14 +30,13 @@ const OtherKits = () => {
                             </p>
                             <NavLink
                                 to="/enhance"
-                                className="inline-flex cursor-pointer items-center gap-2 px-6 py-3 rounded-full text-white font-medium text-sm md:text-lg transition-all duration-300 bg-gradient-to-r from-[#825cf5] to-[#c995fe] hover:opacity-90 shadow-md backdrop-blur-md border border-white/10"
+                                className="inline-flex cursor-pointer items-center gap-2 px-6 py-3 rounded-full text-white font-medium text-sm md:text-lg transition-all duration-300 bg-gradient-to-r  from-[#7d5fff] to-[#a97fff] hover:opacity-90 shadow-md backdrop-blur-md border border-white/10"
                             >
                                 Try now <FaArrowRight className="text-white text-sm md:text-base" />
                             </NavLink>
 
                         </div>
 
-                        {/* Image */}
                         <div className="w-full max-w-xl rounded-2xl overflow-hidden border border-white/10 shadow-xl">
                             <img
                                 src={enhancerKit1}
@@ -49,7 +46,6 @@ const OtherKits = () => {
                         </div>
                     </div>
 
-                    {/* Product Photo Enhancer */}
                     <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-10 md:gap-20">
                         {/* Text Content */}
                         <div className="w-full max-w-xl text-left space-y-6">
@@ -59,15 +55,14 @@ const OtherKits = () => {
                                 background remover for cleaner product shots.
                             </p>
                             <NavLink
-                                to="/enhance"
-                                className="inline-flex cursor-pointer items-center gap-2 px-6 py-3 rounded-full text-white font-medium text-sm md:text-lg transition-all duration-300 bg-gradient-to-r from-[#825cf5] to-[#c995fe] hover:opacity-90 shadow-md backdrop-blur-md border border-white/10"
+                                to="/bgremove"
+                                className="inline-flex cursor-pointer items-center gap-2 px-6 py-3 rounded-full text-white font-medium text-sm md:text-lg transition-all duration-300 bg-gradient-to-r  from-[#7d5fff] to-[#a97fff] hover:opacity-90 shadow-md backdrop-blur-md border border-white/10"
                             >
                                 Try now <FaArrowRight className="text-white text-sm md:text-base" />
                             </NavLink>
 
                         </div>
 
-                        {/* Image */}
                         <div className="w-full max-w-xl rounded-2xl overflow-hidden border border-white/10 shadow-xl">
                             <img
                                 src={enhancerKit2}

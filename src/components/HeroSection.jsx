@@ -12,12 +12,12 @@ const HeroSection = ({
   return (
     <Container>
       <section
-        className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center px-6 pt-15 pb-8 md:py-20 text-center text-white"
+        className="relative bg-cover bg-center bg-no-repeat flex items-center justify-center px-6 pt-15 pb-8 md:pt-20 md:pb-15 text-center text-white"
         style={{ backgroundImage: `url(${BackgroundImage})` }}
       >
         <div className="w-full space-y-6 z-10 relative">
 
-          <h1 className="text-[9vw] sm:text-7xl tracking-4 leading-tight">
+          <h1 className="text-[8vw] sm:text-7xl tracking-4 leading-tight">
             {title}{' '}
             <span className="bg-gradient-to-r from-[#825cf5] to-[#c995fe] bg-clip-text text-transparent whitespace-nowrap">
               {highlight}
@@ -30,8 +30,6 @@ const HeroSection = ({
               {desc}
             </p>
           )}
-
-          {children && <div className="mt-8">{children}</div>}
         </div>
       </section>
     </Container>

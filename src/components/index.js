@@ -4,7 +4,7 @@ import Container from './container/container';
 import Logo from './Logo'
 import ImageUploadBox from './ImageUploadBox'
 import HeroSection from './HeroSection'
-import ActionButtons from './ActionButtons'
+import CustomeButton from './CustomeButton'
 import BeforeAfterSlider from './BeforeAfterSlider'
 import FAQSection from './FAQSection'
 import OtherKits from './OtherKits'
@@ -19,7 +19,7 @@ export {
     Footer,
     Logo,
     ImageUploadBox,
-    ActionButtons,
+    CustomeButton,
     HeroSection,
     BeforeAfterSlider,
     FAQSection,

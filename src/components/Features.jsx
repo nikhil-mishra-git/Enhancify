@@ -22,18 +22,17 @@ const features = [
 const Features = () => {
   return (
     <Container>
-      <section className="md:py-24 text-white">
-        {/* Heading */}
+      <section className="pt-20 md:py-20 text-white">
+
         <div className="text-center md:text-left space-y-6 mb-20">
           <h2 className="text-[7vw] md:text-5xl tracking-tight leading-snug">
             Explore Our <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7d5fff] to-[#a97fff]">
               Powerful Feature's
             </span>
           </h2>
         </div>
 
-        {/* Features Grid */}
         <div className="grid gap-16 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, idx) => (
             <div

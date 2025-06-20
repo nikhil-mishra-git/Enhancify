@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaMagic, FaDownload, FaRedo } from 'react-icons/fa'
 import { enhanceImage } from '../api/imageProcessAPI'
@@ -20,7 +20,7 @@ import {
 
 const Enhance = () => {
   const dispatch = useDispatch()
-  const { image, result, loading } = useSelector((state) => state.image)
+  const { image, result, loading} = useSelector((state) => state.image)
 
   const handleFileChange = async (file) => {
     if (!file) return;
@@ -37,6 +37,10 @@ const Enhance = () => {
       dispatch(setLoading(false))
     }
   }
+
+  useEffect(() => {
+    dispatch(resetState());
+  }, [dispatch]);
 
   const handleEnhanceOther = () => {
     dispatch(resetState())
@@ -63,7 +67,7 @@ const Enhance = () => {
         <BeforeAfterSkeleton />
       ) : showSlider ? (
         <>
-          <BeforeAfterSlider beforeImage={image} afterImage={result} />
+          <BeforeAfterSlider beforeImage={image} afterImage={"https://cdn.picsart.io/1b73c77a-ad42-419a-bbc4-ff88e4c8fb0e.png?type=PNG&to=max&r=0"} />
 
           <div className="flex flex-row flex-wrap justify-center items-center gap-3 md:gap-8 mt-12">
 

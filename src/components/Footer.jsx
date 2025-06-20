@@ -1,30 +1,46 @@
 import { Logo, Container } from "../components";
+import { Link } from "react-router-dom";
 
-const Footer = () => (
-  <Container>
-    <footer className="bg-white/5 backdrop-blur-2xl border-t border-white/10 text-gray-300 py-12 mt-10 rounded-t-4xl">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
-        {/* Left: Logo and Tagline */}
-        <div className="text-center md:text-left">
-          <Logo />
-          <p className="text-sm text-gray-400 mt-1">Empowering your images with AI ✨</p>
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Enhance", path: "/enhance" },
+    { name: "Background Remove", path: "/bgremove" },
+  ];
+
+  return (
+    <Container>
+      <footer className="bg-white/5 backdrop-blur-xl border-t border-white/10 text-gray-300 py-10 mt-20 rounded-t-3xl shadow-inner">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+
+          {/* Logo */}
+          <div className="mb-4 md:mb-0">
+            <Logo />
+          </div>
+
+          {/* Navigation */}
+          <div className="flex flex-wrap justify-center gap-6 text-sm font-medium">
+            {navLinks.map(({ name, path }) => (
+              <Link
+                key={name}
+                to={path}
+                className="hover:text-white transition-colors duration-200"
+              >
+                {name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Copyright */}
+          <div className="text-sm text-gray-400">
+            &copy; {currentYear} <span className="text-white font-semibold">Enhancify</span> — All rights reserved.
+          </div>
         </div>
-
-        {/* Center: Nav Links */}
-        <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-gray-300">
-          {["Enhance", "Restore", "Background Remove", "About", "Login"].map((item) => (
-            <a key={item} href="#" className="hover:text-white transition duration-200">{item}</a>
-          ))}
-        </div>
-
-        {/* Right: Copyright */}
-        <div className="text-sm text-gray-400 text-center md:text-right">
-          © {new Date().getFullYear()} <span className="text-white font-semibold">Enhancify</span>
-        </div>
-      </div>
-    </footer>
-  </Container>
-);
+      </footer>
+    </Container>
+  );
+};
 
 export default Footer;
